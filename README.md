@@ -6,7 +6,7 @@
 
 Срок выполнения задания:
 
-**до 24.04.22** ![Relative date](https://img.shields.io/date/1650834000)
+**до 23.04.23** ![Relative date](https://img.shields.io/date/1682283600)
 
 ## Lab 06. Генератор текста на основе цепи Маркова
 
