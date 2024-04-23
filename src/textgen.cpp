@@ -1,6 +1,6 @@
 // Copyright 2022 UNN-IASR
 #include "textgen.h"
-std::vector<std::string> generator::read_vchodnoi_fail(string filename) {
+std::vector<std::string> generator::read_vchodnoi_fail(std::string filename) {
     string word = "";
     char cimvol;
     std::ifstream file;
