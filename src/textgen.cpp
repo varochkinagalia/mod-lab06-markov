@@ -29,7 +29,7 @@ std::map<prefix, std::vector<std::string>> generator::
 sozdaem_tablicu(std::vector<std::string>words) {
     prefix pref;
     std::vector<std::string> suffix;
-    std::map<prefix, std::vector<std::string>>std::iterator it;
+    std::map<prefix, std::vector<std::string>> std::iterator it;
     for (auto word : words) {
         if (pref.empty() || pref.size() < NPREF) {
             pref.push_back(word);
@@ -57,7 +57,7 @@ std::deque<std::string>generator::
 prefixi(std::map<prefix, std::vector<std::string>> statetab) {
     prefix pref;
     std::map<prefix,
-    std::vector<std::string>>std::iterator it = statetab.begin();
+    std::vector<std::string>> std::iterator it = statetab.begin();
     int pos_start = rand() % statetab.size();
     int count = 0;
     while (count != pos_start && it != statetab.end()) {
@@ -73,7 +73,7 @@ prefixi(std::map<prefix, std::vector<std::string>> statetab) {
 }
 std::string generator::suffix_poick
 (prefix f, std::map<prefix, std::vector<std::string>> statetab) {
-    std::map<prefix, std::vector<std::string>>std::iterator it;
+    std::map<prefix, std::vector<std::string>> std::iterator it;
     it = statetab.find(f);
     if (it != statetab.end()) {
         std::vector<std::string> suf = it->second;
@@ -89,7 +89,7 @@ std::string generator::itogovii_text
     std::string result = "";
     prefix pref;
     std::map<prefix,
-    std::vector<std::string>>std::iterator i = statetab.begin();
+    std::vector<std::string>> std::iterator i = statetab.begin();
     prefix p = i->first;
     for (auto word : p) {
         pref.push_back(word);
