@@ -1,11 +1,5 @@
 // Copyright 2022 UNN-IASR
 #include "textgen.h"
-#include <fstream>
-#include <locale.h>
-#include <map>
-#include <vector>
-#include <string>
-#include <deque>
 std::vector<std::string> generator::read_vchodnoi_fail(std::string filename) {
     std::string word = "";
     char cimvol;
@@ -17,7 +11,8 @@ std::vector<std::string> generator::read_vchodnoi_fail(std::string filename) {
         while (file.get(cimvol)) {
             if (cimvol == ' ' || cimvol == '\t' ||
                 cimvol == '\n' || cimvol == '\0' || cimvol == '\r') {
-                if (word.size() != 0 && (cimvol == ' ' || cimvol == '\t' || cimvol == '\n' || cimvol == '\0' || cimvol == '\r')) {
+                if (word.size() != 0 && (cimvol == ' ' || cimvol == '\t' ||
+                    cimvol == '\n' || cimvol == '\0' || cimvol == '\r')) {
                     this->words.push_back(word + ' ');
                     word.clear();
                     word.resize(0);
