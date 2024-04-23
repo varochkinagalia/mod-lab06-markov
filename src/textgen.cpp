@@ -31,7 +31,7 @@ std::map<prefix, std::vector<std::string>> generator::
 sozdaem_tablicu(std::vector<std::string>words) {
     prefix pref;
     std::vector<std::string> suffix;
-    std::map<prefix, std::vector<std::string>> iterator it;
+    std::map<prefix, std::vector<std::string>>::iterator it;
     for (auto word : words) {
         if (pref.empty() || pref.size() < NPREF) {
             pref.push_back(word);
@@ -58,8 +58,8 @@ sozdaem_tablicu(std::vector<std::string>words) {
 std::deque<std::string>generator::
 prefixi(std::map<prefix, std::vector<std::string>> statetab) {
     prefix pref;
-    std::map<std::deque<std::string>,
-    std::vector<std::string>> std::iterator ita = statetab.begin();
+    std::map<prefix, std::vector<std::string>>::iterator ita =
+    statetab.begin();
     int pos_start = rand_r() % statetab.size();
     int count = 0;
     while (count != pos_start && ita != statetab.end()) {
@@ -67,7 +67,7 @@ prefixi(std::map<prefix, std::vector<std::string>> statetab) {
         ita++;
     }
     prefix pref_chek = it->first;
-    prefix std::iterator it1 = pref_chek.begin();
+    std::deque<std::string>::iterator it1 = pref_chek.begin();
     for (auto word : pref_chek) {
         pref.push_back(word);
     }
@@ -76,7 +76,7 @@ prefixi(std::map<prefix, std::vector<std::string>> statetab) {
 std::string generator::suffix_poick
 (prefix f, std::map<std::deque<std::string>,
 std::vector<std::string>> statetab) {
-    std::map<prefix, std::vector<std::string>> std::iterator itb;
+    std::map<prefix, std::vector<std::string>>::iterator itb;
     itb = statetab.find(f);
     if (itb != statetab.end()) {
         std::vector<std::string> suf = itb->second;
@@ -91,8 +91,8 @@ std::string generator::itogovii_text
 (std::map<prefix, std::vector<std::string>> statetab) {
     std::string result = "";
     prefix pref;
-    std::map<std::deque<std::string>,
-    std::vector<std::string>> std::iterator i = statetab.begin();
+    std::map<prefix, std::vector<std::string>>::iterator i =
+    statetab.begin();
     prefix p = i->first;
     for (auto word : p) {
         pref.push_back(word);
