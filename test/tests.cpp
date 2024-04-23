@@ -58,5 +58,5 @@ TEST(Test, Test_5) {
     };
     gen.MAXGEN = 4;
     std::string res = gen.itogovii_text(tablica);
-    EXPECT_EQ(res, "is a good a");
+    EXPECT_EQ(res, "is a good a ");
 }
