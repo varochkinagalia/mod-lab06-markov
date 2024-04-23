@@ -58,7 +58,7 @@ prefixi(std::map<prefix, std::vector<std::string>> statetab) {
     prefix pref;
     std::map<prefix,
     std::vector<std::string>> std::iterator it = statetab.begin();
-    int pos_start = rand() % statetab.size();
+    int pos_start = rand_r(1) % statetab.size();
     int count = 0;
     while (count != pos_start && it != statetab.end()) {
         count++;
