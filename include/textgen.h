@@ -1,27 +1,31 @@
 // Copyright 2022 UNN-IASR
-#pragma once
+#ifndef INCLUDE_TEXTGEN_H_
+#define INCLUDE_TEXTGEN_H_
 #include <map>
 #include <vector>
 #include <string>
 #include <deque>
+#include <iterator>
 #include <locale.h>
 #include <iostream>
 #include <fstream>
-typedef std::deque<std::string> prefix;
+using namespace std;
+typedef deque<string> prefix;
 class generator {
  private:
-     std::vector<std::string> words;
+     vector<string> words;
  public:
      //чтение файла
-     std::vector<std::string> read_vchodnoi_fail(std::string filename);
+     vector<string> read_vchodnoi_fail(string filename);
      //создание таблицы
-     std::map<prefix, std::vector<std::string>> statetab;
+     map<prefix,vector<string>> statetab;
      int NPREF = 2;
-     std::map<prefix, std::vector<std::string>> sozdaem_tablicu(std::vector<std::string>words);
+     map<prefix,vector<string>> sozdaem_tablicu(vector<string>words);
      //генерация выходного текста
      int MAXGEN = 1000;
-     std::deque<std::string> prefixi(std::map<prefix, std::vector<std::string>> statetab);
-     std::string suffix_poick(prefix pr, std::map<prefix, std::vector<std::string>> statetab);
-     std::string itogovii_text(std::map<prefix, std::vector<std::string>> statetab);
+     deque<string> prefixi(map<prefix,vector<string>> statetab);
+     string suffix_poick(prefix pr,map<prefix,vector<string>> statetab);
+     string itogovii_text(map<prefix,vector<string>> statetab);
      generator();
 };
+#endif  // INCLUDE_TEXTGEN_H_
