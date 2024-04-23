@@ -1,7 +1,7 @@
 // Copyright 2022 UNN-IASR
 #include "textgen.h"
-std::vector<std::string> generator::read_vchodnoi_fail(std::string filename) {
-    std::string word = "";
+std::vector<std::string> generator::read_vchodnoi_fail(string filename) {
+    string word = "";
     char cimvol;
     std::ifstream file;
     file.open(filename);
@@ -53,10 +53,10 @@ sozdaem_tablicu(std::vector<std::string>words) {
     return statetab;
 }
 //выбираем следующие после первого префиксы
-deque<std::string>generator::
+std::deque<std::string>generator::
 prefixi(std::map<prefix, std::vector<std::string>> statetab) {
     prefix pref;
-    map<prefix, vector<std::string>>::iterator it = statetab.begin();
+    map<prefix, std::vector<std::string>>::iterator it = statetab.begin();
     int pos_start = rand_r() % statetab.size();
     int count = 0;
     while (count != pos_start && it != statetab.end()) {
@@ -71,11 +71,11 @@ prefixi(std::map<prefix, std::vector<std::string>> statetab) {
     return pref;
 }
 std::string generator::suffix_poick
-(prefix f, map<prefix, vector<std::string>> statetab) {
-    map<prefix, vector<string>>::iterator it;
+(prefix f, std::map<prefix, std::vector<std::string>> statetab) {
+    std::map<prefix, std::vector<std::string>>::iterator it;
     it = statetab.find(f);
     if (it != statetab.end()) {
-        vector<string> suf = it->second;
+        std::vector<std::string> suf = it->second;
         std::string result = "";
         result += suf[rand() % suf.size()];
         return result;
@@ -85,9 +85,9 @@ std::string generator::suffix_poick
 }
 std::string generator::itogovii_text
 (std::map<prefix, std::vector<std::string>> statetab) {
-    std::string result = "";
+    string result = "";
     prefix pref;
-    map<prefix, vector<std::string>>::iterator i = statetab.begin();
+    std::map<prefix, std::vector<std::string>>::iterator i = statetab.begin();
     prefix p = i->first;
     for (auto word : p) {
         pref.push_back(word);
@@ -98,7 +98,7 @@ std::string generator::itogovii_text
         result += word + ' ';
         count++;
     }
-    std::string stroka = "";
+    string stroka = "";
     while (count < MAXGEN) {
         stroka = suffix_poick(prefix, statetab);
         if (stroka == "") {
