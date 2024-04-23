@@ -2,6 +2,7 @@
 #ifndef INCLUDE_TEXTGEN_H_
 #define INCLUDE_TEXTGEN_H_
 #include <locale.h>
+#include <stdlib.h>
 #include <iostream>
 #include <fstream>
 #include <map>
