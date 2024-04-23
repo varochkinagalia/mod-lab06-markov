@@ -15,7 +15,7 @@ class generator {
      std::vector<std::string> words;
  public:
      //чтение файла
-     std::vector<std::string> read_vchodnoi_fail(string filename);
+     std::vector<std::string> read_vchodnoi_fail(std::string filename);
      //создание таблицы
      std::map<prefix, std::vector<std::string>> statetab;
      int NPREF = 2;
@@ -25,9 +25,9 @@ class generator {
      int MAXGEN = 1000;
      std::deque<std::string> prefixi(std::map<prefix,
      std::vector<std::string>> statetab);
-     string suffix_poick(prefix pr, std::map<prefix,
+     std::string suffix_poick(prefix pr, std::map<prefix,
      std::vector<std::string>> statetab);
-     string itogovii_text(std::map<prefix, std::vector<std::string>> statetab);
+     std::string itogovii_text(std::map<prefix, std::vector<std::string>> statetab);
      generator();
 };
 #endif  // INCLUDE_TEXTGEN_H_
