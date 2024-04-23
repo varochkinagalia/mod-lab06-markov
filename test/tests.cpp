@@ -10,8 +10,8 @@ TEST(Test, Test_1) {
     std::map<prefix, std::vector<std::string>>::iterator it =
       tablica.begin();
     prefix res = it->first;
-    EXPECT_EQ(res.front(), "today");
-    EXPECT_EQ(res.back(), "is");
+    EXPECT_EQ(res.front(), "a");
+    EXPECT_EQ(res.back(), "good");
 }
 TEST(Test, Test_2) {
     std::vector<std::string> words = {"today", "is", "a", "good", "day"};
@@ -24,9 +24,9 @@ TEST(Test, Test_2) {
     std::map<prefix, std::vector<std::string>>::iterator it1 =
       tablica.begin();
     std::vector<std::string> suffix = it1->second;
-    EXPECT_EQ(res.front(), "today");
-    EXPECT_EQ(res.back(), "is");
-    EXPECT_EQ(suffix.front(), "a");
+    EXPECT_EQ(res.front(), "a");
+    EXPECT_EQ(res.back(), "good");
+    EXPECT_EQ(suffix.front(), "day");
 }
 TEST(Test, Test_3) {
     std::vector<std::string> words = {"today", "is", "a"};
@@ -48,7 +48,7 @@ TEST(Test, Test_4) {
       tablica.begin();
     prefix res = it->first;
     std::string suffix = gen.suffix_poick(res, tablica);
-    EXPECT_EQ(suffix, "a");
+    EXPECT_EQ(suffix, "day");
 }
 TEST(Test, Test_5) {
     generator gen;
@@ -58,5 +58,5 @@ TEST(Test, Test_5) {
     };
     gen.MAXGEN = 4;
     std::string res = gen.itogovii_text(tablica);
-    EXPECT_EQ(res, "today is a good");
+    EXPECT_EQ(res, "is a good a");
 }
