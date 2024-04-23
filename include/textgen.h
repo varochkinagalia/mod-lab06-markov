@@ -23,7 +23,7 @@ class generator {
      std::vector<std::string>> sozdaem_tablicu(std::vector<std::string>words);
      //генерация выходного текста
      int MAXGEN = 1000;
-     std::deque<std::string> prefixi(std::map<prefix, 
+     std::deque<std::string> prefixi(std::map<prefix,
      std::vector<std::string>> statetab);
      string suffix_poick(prefix pr, std::map<prefix,
      std::vector<std::string>> statetab);
