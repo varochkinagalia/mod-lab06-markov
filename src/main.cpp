@@ -8,6 +8,6 @@ int main() {
   std::vector<std::string>words = gen.read_vchodnoi_fail(file);
   std::map<prefix, std::vector<std::string>> tablica =
   gen.sozdaem_tablicu(words);
-  string itog = gen.itogovii_text(tablica);
+  std::string itog = gen.itogovii_text(tablica);
   return 0;
 }
