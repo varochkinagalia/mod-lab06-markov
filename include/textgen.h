@@ -19,11 +19,14 @@ class generator {
      //создание таблицы
      std::map<prefix, std::vector<std::string>> statetab;
      int NPREF = 2;
-     std::map<prefix, std::vector<std::string>> sozdaem_tablicu(std::vector<std::string>words);
+     std::map<prefix,
+     std::vector<std::string>> sozdaem_tablicu(std::vector<std::string>words);
      //генерация выходного текста
      int MAXGEN = 1000;
-     std::deque<std::string> prefixi(std::map<std::prefix, std::vector<std::string>> statetab);
-     string suffix_poick(prefix pr, std::map<std::prefix, std::vector<std::string>> statetab);
+     std::deque<std::string> prefixi(std::map<prefix, 
+     std::vector<std::string>> statetab);
+     string suffix_poick(prefix pr, std::map<prefix,
+     std::vector<std::string>> statetab);
      string itogovii_text(std::map<prefix, std::vector<std::string>> statetab);
      generator();
 };
