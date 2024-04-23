@@ -31,7 +31,7 @@ sozdaem_tablicu(std::vector<std::string>words) {
     prefix pref;
     std::vector<std::string> suffix;
     std::map<std::deque<std::string>,
-    std::vector<std::string>> std::iterator it;
+    std::vector<std::string>> iterator it;
     for (auto word : words) {
         if (pref.empty() || pref.size() < NPREF) {
             pref.push_back(word);
