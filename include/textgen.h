@@ -27,7 +27,8 @@ class generator {
      std::vector<std::string>> statetab);
      std::string suffix_poick(prefix pr, std::map<prefix,
      std::vector<std::string>> statetab);
-     std::string itogovii_text(std::map<prefix, std::vector<std::string>> statetab);
+     std::string itogovii_text(std::map<prefix,
+     std::vector<std::string>> statetab);
      generator();
 };
 #endif  // INCLUDE_TEXTGEN_H_
