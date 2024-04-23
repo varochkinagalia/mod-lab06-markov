@@ -56,7 +56,8 @@ sozdaem_tablicu(std::vector<std::string>words) {
 std::deque<std::string>generator::
 prefixi(std::map<prefix, std::vector<std::string>> statetab) {
     prefix pref;
-    std::map<prefix, std::vector<std::string>>::std::iterator it = statetab.begin();
+    std::map<prefix,
+    std::vector<std::string>>::std::iterator it = statetab.begin();
     int pos_start = rand_r() % statetab.size();
     int count = 0;
     while (count != pos_start && it != statetab.end()) {
@@ -87,7 +88,8 @@ std::string generator::itogovii_text
 (std::map<prefix, std::vector<std::string>> statetab) {
     std::string result = "";
     prefix pref;
-    std::map<prefix, std::vector<std::string>>::std::iterator i = statetab.begin();
+    std::map<prefix,
+    std::vector<std::string>>::std::iterator i = statetab.begin();
     prefix p = i->first;
     for (auto word : p) {
         pref.push_back(word);
