@@ -40,7 +40,7 @@ TEST(Test, Test_3) {
     std::map<prefix, std::vector<std::string>>::iterator it1 =
       tablica.begin();
     std::vector<std::string> suffix = it1->second;
-    EXPEECT_EQ(suffix, "a");
+    EXPECT_EQ(suffix, "a");
 }
 TEST(Test, Test_4) {
     std::vector<std::string> words = {"today", "is", "a", "good", "day"};
@@ -51,7 +51,8 @@ TEST(Test, Test_4) {
       tablica.begin();
     prefix res = it->first;
     std::string suffix = gen.suffix_poick(res, tablica);
-    EXPEECT_EQ(suffix, "a");
+    EXPECT_EQ(suffix, "a");
+}
 TEST(Test, Test_5) {
     generator gen;
     std::map<prefix, std::vector<std::string>> tablica = {
