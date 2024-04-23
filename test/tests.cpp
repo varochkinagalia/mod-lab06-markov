@@ -37,9 +37,6 @@ TEST(Test, Test_3) {
       tablica.begin();
     prefix res = it->first;
     std::string suffix = gen.suffix_poick(res, tablica);
-    std::map<prefix, std::vector<std::string>>::iterator it1 =
-      tablica.begin();
-    std::vector<std::string> suffix = it1->second;
     EXPECT_EQ(suffix, "a");
 }
 TEST(Test, Test_4) {
