@@ -63,7 +63,8 @@ prefixi(std::map<prefix, std::vector<std::string>> statetab) {
     statetab.begin();
     int delitel = statetab.size();
     srand(4561);
-    int pos_start = rand() % delitel;
+    unsigned int* k = 3;
+    int pos_start = rand_r(k) % delitel;
     int count = 0;
     while (count != pos_start && ita != statetab.end()) {
         count++;
