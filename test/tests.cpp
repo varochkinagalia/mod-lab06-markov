@@ -1,8 +1,8 @@
 // Copyright 2021 GHA Test Team
-#include "../include/textgen.h"
 #include <gtest/gtest.h>
+#include "../include/textgen.h"
 typedef std::deque<std::string> prefix;
-TEST(Test,Test_1) {
+TEST(Test, Test_1) {
     std::vector<std::string> words = {"today", "is", "a", "good", "day"};
     generator gen;
     std::map<prefix, std::vector<std::string>> tablica =
@@ -10,9 +10,10 @@ TEST(Test,Test_1) {
     std::map<prefix, std::vector<std::string>>::iterator it =
       tablica.begin();
     prefix res = it->first;
-    EXPECT_EQ({"today","is"}, res);
+    EXPECT_EQ(res.front(), "today");
+    EXPECT_EQ(res.back(), "is");
 }
-TEST(Test,Test_2) {
+TEST(Test, Test_2) {
     std::vector<std::string> words = {"today", "is", "a", "good", "day"};
     generator gen;
     std::map<prefix, std::vector<std::string>> tablica =
@@ -25,7 +26,7 @@ TEST(Test,Test_2) {
     EXPECT_EQ(res.back(),"is");
     EXPECT_EQ(suffix.front(),"a");
 }
-TEST(Test,Test_3) {
+TEST(Test, Test_3) {
     std::vector<std::string> words = {"today", "is", "a"};
     generator gen;
     std::map<prefix, std::vector<std::string>> tablica =
@@ -36,7 +37,7 @@ TEST(Test,Test_3) {
     string suffix = gen.suffix_poick(res,tablica);
     EXPEECT_EQ(suffix,"a");
 }
-TEST(Test,Test_4) {
+TEST(Test, Test_4) {
     std::vector<std::string> words = {"today", "is", "a", "good", "day"};
     generator gen;
     std::map<prefix, std::vector<std::string>> tablica =
@@ -46,7 +47,7 @@ TEST(Test,Test_4) {
     prefix res = it->first;
     string suffix = gen.suffix_poick(res,tablica);
     EXPEECT_EQ(suffix,"a");
-TEST(Test,Test_5) {
+TEST(Test, Test_5) {
     generator gen;
     std::map<prefix, std::vector<std::string>> tablica = {
         {{"today", "is"}, {"a"}},
