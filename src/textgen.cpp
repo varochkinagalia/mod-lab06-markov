@@ -1,5 +1,6 @@
 // Copyright 2022 UNN-IASR
 #include "textgen.h"
+#include <iterator>
 std::vector<std::string> generator::read_vchodnoi_fail(std::string filename) {
     std::string word = "";
     char cimvol;
@@ -57,12 +58,12 @@ std::deque<std::string>generator::
 prefixi(std::map<prefix, std::vector<std::string>> statetab) {
     prefix pref;
     std::map<prefix,
-    std::vector<std::string>> std::iterator it = statetab.begin();
+    std::vector<std::string>> std::iterator ita = statetab.begin();
     int pos_start = rand_r(1) % statetab.size();
     int count = 0;
-    while (count != pos_start && it != statetab.end()) {
+    while (count != pos_start && ita != statetab.end()) {
         count++;
-        it++;
+        ita++;
     }
     prefix pref_chek = it->first;
     prefix std::iterator it1 = pref_chek.begin();
@@ -73,10 +74,10 @@ prefixi(std::map<prefix, std::vector<std::string>> statetab) {
 }
 std::string generator::suffix_poick
 (prefix f, std::map<prefix, std::vector<std::string>> statetab) {
-    std::map<prefix, std::vector<std::string>> std::iterator it;
-    it = statetab.find(f);
-    if (it != statetab.end()) {
-        std::vector<std::string> suf = it->second;
+    std::map<prefix, std::vector<std::string>> std::iterator itb;
+    itb = statetab.find(f);
+    if (itb != statetab.end()) {
+        std::vector<std::string> suf = itb->second;
         std::string result = "";
         result += suf[rand() % suf.size()];
         return result;
