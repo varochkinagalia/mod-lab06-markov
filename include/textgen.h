@@ -9,22 +9,22 @@
 #include <string>
 #include <deque>
 #include <iterator>
-typedef deque<string> prefix;
+typedef std::deque<std::string> prefix;
 class generator {
  private:
-     vector<string> words;
+     std::vector<std::string> words;
  public:
      //чтение файла
-     vector<string> read_vchodnoi_fail(string filename);
+     std::vector<std::string> read_vchodnoi_fail(string filename);
      //создание таблицы
-     map<prefix, vector<string>> statetab;
+     std::map<prefix, std::vector<std::string>> statetab;
      int NPREF = 2;
-     map<prefix, vector<string>> sozdaem_tablicu(vector<string>words);
+     std::map<prefix, std::vector<std::string>> sozdaem_tablicu(std::vector<std::string>words);
      //генерация выходного текста
      int MAXGEN = 1000;
-     deque<string> prefixi(map<prefix, vector<string>> statetab);
-     string suffix_poick(prefix pr, map<prefix, vector<string>> statetab);
-     string itogovii_text(map<prefix, vector<string>> statetab);
+     std::deque<std::string> prefixi(std::map<std::prefix, std::vector<std::string>> statetab);
+     string suffix_poick(prefix pr, std::map<std::prefix, std::vector<std::string>> statetab);
+     string itogovii_text(std::map<prefix, std::vector<std::string>> statetab);
      generator();
 };
 #endif  // INCLUDE_TEXTGEN_H_
