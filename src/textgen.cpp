@@ -1,5 +1,6 @@
 // Copyright 2022 UNN-IASR
 #include "textgen.h"
+#include <stdlib.h>
 #include <iterator>
 typedef std::deque<std::string> prefix;
 std::vector<std::string> generator::read_vchodnoi_fail(std::string filename) {
