@@ -5,7 +5,6 @@
 #include <iostream>
 #include <fstream>
 #include <map>
-#include <string>
 #include <vector>
 #include <string>
 #include <deque>
@@ -18,13 +17,13 @@ class generator {
      //чтение файла
      vector<string> read_vchodnoi_fail(string filename);
      //создание таблицы
-     map<prefix,vector<string>> statetab;
+     map<prefix, vector<string>> statetab;
      int NPREF = 2;
-     map<prefix,vector<string>> sozdaem_tablicu(vector<string>words);
+     map<prefix, vector<string>> sozdaem_tablicu(vector<string>words);
      //генерация выходного текста
      int MAXGEN = 1000;
      deque<string> prefixi(map<prefix, vector<string>> statetab);
-     string suffix_poick(prefix pr, map<prefix,vector<string>> statetab);
+     string suffix_poick(prefix pr, map<prefix, vector<string>> statetab);
      string itogovii_text(map<prefix, vector<string>> statetab);
      generator();
 };
