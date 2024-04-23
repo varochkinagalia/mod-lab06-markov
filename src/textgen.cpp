@@ -1,7 +1,7 @@
 // Copyright 2022 UNN-IASR
 #include "textgen.h"
 std::vector<std::string> generator::read_vchodnoi_fail(std::string filename) {
-    string word = "";
+    std::string word = "";
     char cimvol;
     std::ifstream file;
     file.open(filename);
@@ -29,7 +29,7 @@ std::map<prefix, std::vector<std::string>> generator::
 sozdaem_tablicu(std::vector<std::string>words) {
     prefix pref;
     std::vector<std::string> suffix;
-    std::map<prefix, std::vector<std::string>>::iterator it;
+    std::map<prefix, std::vector<std::string>>::std::iterator it;
     for (auto word : words) {
         if (pref.empty() || pref.size() < NPREF) {
             pref.push_back(word);
@@ -56,7 +56,7 @@ sozdaem_tablicu(std::vector<std::string>words) {
 std::deque<std::string>generator::
 prefixi(std::map<prefix, std::vector<std::string>> statetab) {
     prefix pref;
-    map<prefix, std::vector<std::string>>::iterator it = statetab.begin();
+    std::map<prefix, std::vector<std::string>>::std::iterator it = statetab.begin();
     int pos_start = rand_r() % statetab.size();
     int count = 0;
     while (count != pos_start && it != statetab.end()) {
@@ -64,7 +64,7 @@ prefixi(std::map<prefix, std::vector<std::string>> statetab) {
         it++;
     }
     prefix pref_chek = it->first;
-    prefix::iterator it1 = pref_chek.begin();
+    prefix::std::iterator it1 = pref_chek.begin();
     for (auto word : pref_chek) {
         pref.push_back(word);
     }
@@ -72,7 +72,7 @@ prefixi(std::map<prefix, std::vector<std::string>> statetab) {
 }
 std::string generator::suffix_poick
 (prefix f, std::map<prefix, std::vector<std::string>> statetab) {
-    std::map<prefix, std::vector<std::string>>::iterator it;
+    std::map<prefix, std::vector<std::string>>::std::iterator it;
     it = statetab.find(f);
     if (it != statetab.end()) {
         std::vector<std::string> suf = it->second;
@@ -80,14 +80,14 @@ std::string generator::suffix_poick
         result += suf[rand() % suf.size()];
         return result;
     }
-    string result = "";
+    std::string result = "";
     return result;
 }
 std::string generator::itogovii_text
 (std::map<prefix, std::vector<std::string>> statetab) {
-    string result = "";
+    std::string result = "";
     prefix pref;
-    std::map<prefix, std::vector<std::string>>::iterator i = statetab.begin();
+    std::map<prefix, std::vector<std::string>>::std::iterator i = statetab.begin();
     prefix p = i->first;
     for (auto word : p) {
         pref.push_back(word);
@@ -98,7 +98,7 @@ std::string generator::itogovii_text
         result += word + ' ';
         count++;
     }
-    string stroka = "";
+    std::string stroka = "";
     while (count < MAXGEN) {
         stroka = suffix_poick(prefix, statetab);
         if (stroka == "") {
