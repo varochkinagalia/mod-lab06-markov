@@ -1,6 +1,7 @@
 // Copyright 2022 UNN-IASR
 #include "textgen.h"
 #include <iterator>
+typedef std::deque<std::string> prefix;
 std::vector<std::string> generator::read_vchodnoi_fail(std::string filename) {
     std::string word = "";
     char cimvol;
@@ -31,7 +32,7 @@ sozdaem_tablicu(std::vector<std::string>words) {
     prefix pref;
     std::vector<std::string> suffix;
     std::map<std::deque<std::string>,
-    std::vector<std::string>> iterator it;
+    std::vector<std::string>> iterator std::deque<std::string> it;
     for (auto word : words) {
         if (pref.empty() || pref.size() < NPREF) {
             pref.push_back(word);
