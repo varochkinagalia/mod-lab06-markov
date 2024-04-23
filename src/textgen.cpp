@@ -60,13 +60,14 @@ prefixi(std::map<prefix, std::vector<std::string>> statetab) {
     prefix pref;
     std::map<prefix, std::vector<std::string>>::iterator ita =
     statetab.begin();
-    int pos_start = rand_r() % statetab.size();
+    int delitel = statetab.size();
+    int pos_start = rand() % delitel;
     int count = 0;
     while (count != pos_start && ita != statetab.end()) {
         count++;
         ita++;
     }
-    prefix pref_chek = it->first;
+    prefix pref_chek = ita->first;
     std::deque<std::string>::iterator it1 = pref_chek.begin();
     for (auto word : pref_chek) {
         pref.push_back(word);
