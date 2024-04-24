@@ -10,8 +10,12 @@ TEST(Test, Test_1) {
     std::map<prefix, std::vector<std::string>>::iterator it =
       tablica.begin();
     prefix res = it->first;
-    EXPECT_EQ(res.front(), "a");
-    EXPECT_EQ(res.back(), "good");
+    prefix p = gen.prefixi(tablica);
+    std::string a = "";
+    for (auto word : p) {
+        a += word + ' ';
+    }
+    EXPECT_EQ(a, "today is ");
 }
 TEST(Test, Test_2) {
     std::vector<std::string> words = {"today", "is", "a", "good", "day"};
