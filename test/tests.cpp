@@ -49,8 +49,9 @@ TEST(Test, Test_4) {
 TEST(Test, Test_5) {
     generator gen;
     std::map<prefix, std::vector<std::string>> tablica = {
-        {{"today", "is"}, {"a", "good"}},
-        {{"is", "a"}, {"good"}}
+        {{"is", "a"}, {"good"}},
+        {{"a", "good"}, {"day"}},
+        {{"today", "is"}, {"a"}}
     };
     gen.MAXGEN = 4;
     std::string res = gen.itogovii_text(tablica);
