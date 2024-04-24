@@ -103,14 +103,14 @@ std::string generator::itogovii_text
     while (count < MAXGEN) {
         stroka = suffix_poick(pref, statetab);
         if (stroka == "") {
-            prefix = prefixi(statetab);
+            pref = prefixi(statetab);
             stroka = suffix_poick(pref, statetab);
         }
         result += stroka + ' ';
         count++;
         stroka.pop_back();
-        prefix.pop_front();
-        prefix.push_back(stroka);
+        pref.pop_front();
+        pref.push_back(stroka);
     }
     return result;
 }
