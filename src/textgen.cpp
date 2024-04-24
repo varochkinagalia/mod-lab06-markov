@@ -95,16 +95,16 @@ std::string generator::itogovii_text
     std::string result = "";
     prefix pref = prefixi(statetab);
     int count = 0;
-    for (auto word : prefix) {
+    for (auto word : pref) {
         result += word + ' ';
         count++;
     }
     std::string stroka = "";
     while (count < MAXGEN) {
-        stroka = suffix_poick(prefix, statetab);
+        stroka = suffix_poick(pref, statetab);
         if (stroka == "") {
             prefix = prefixi(statetab);
-            stroka = suffix_poick(prefix, statetab);
+            stroka = suffix_poick(pref, statetab);
         }
         result += stroka + ' ';
         count++;
