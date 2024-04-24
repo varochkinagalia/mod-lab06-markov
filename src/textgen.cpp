@@ -93,6 +93,8 @@ std::vector<std::string>> statetab) {
 std::string generator::itogovii_text
 (std::map<prefix, std::vector<std::string>> statetab) {
     std::string result = "";
+    unsigned int seed = 1;
+    srand(seed);
     prefix pref = prefixi(statetab);
     int count = 0;
     for (auto word : pref) {
