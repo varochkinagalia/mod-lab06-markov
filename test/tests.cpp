@@ -7,9 +7,6 @@ TEST(Test, Test_1) {
     generator gen;
     std::map<prefix, std::vector<std::string>> tablica =
       gen.sozdaem_tablicu(words);
-    std::map<prefix, std::vector<std::string>>::iterator it =
-      tablica.begin();
-    prefix res = it->first;
     prefix p = gen.prefixi(tablica);
     std::string a = "";
     for (auto word : p) {
