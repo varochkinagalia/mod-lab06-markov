@@ -49,11 +49,11 @@ TEST(Test, Test_4) {
 TEST(Test, Test_5) {
     generator gen;
     std::map<prefix, std::vector<std::string>> tablica = {
-        {{"a", "good"}, {"day"}},
-        {{"is", "a"}, {"good"}},
-        {{"today", "is"}, {"a"}}
+        {{"good", "day"}, {"!!!"}},
+        {{"is", "good"}, {"day"}},
+        {{"today", "is"}, {"good"}}
     };
     gen.MAXGEN = 4;
     std::string res = gen.itogovii_text(tablica);
-    EXPECT_EQ(res, "today is a good ");
+    EXPECT_EQ(res, "today is good day ");
 }
