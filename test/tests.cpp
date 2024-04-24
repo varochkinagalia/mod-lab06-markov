@@ -19,25 +19,22 @@ TEST(Test, Test_2) {
     generator gen;
     std::map<prefix, std::vector<std::string>> tablica =
       gen.sozdaem_tablicu(words);
-    std::map<prefix, std::vector<std::string>>::iterator it =
-      tablica.begin();
-    prefix res = it->first;
-    std::map<prefix, std::vector<std::string>>::iterator it1 =
-      tablica.begin();
-    std::vector<std::string> suffix = it1->second;
-    EXPECT_EQ(res.front(), "a");
-    EXPECT_EQ(res.back(), "good");
-    EXPECT_EQ(suffix.front(), "day");
+    prefix p = gen.prefixi(tablica);
+    std::string a = "";
+    for (auto word : p) {
+        a += word + ' ';
+    }
+    std::string j = gen.suffix_poick(p, tablica);
+    std::string res = a + j;
+    EXPECT_EQ(res, "today is a");
 }
 TEST(Test, Test_3) {
     std::vector<std::string> words = {"today", "is", "a"};
     generator gen;
     std::map<prefix, std::vector<std::string>> tablica =
       gen.sozdaem_tablicu(words);
-    std::map<prefix, std::vector<std::string>>::iterator it =
-      tablica.begin();
-    prefix res = it->first;
-    std::string suffix = gen.suffix_poick(res, tablica);
+    prefix p = gen.prefixi(tablica);
+    std::string suffix = gen.suffix_poick(p, tablica);
     EXPECT_EQ(suffix, "a");
 }
 TEST(Test, Test_4) {
@@ -45,19 +42,17 @@ TEST(Test, Test_4) {
     generator gen;
     std::map<prefix, std::vector<std::string>> tablica =
       gen.sozdaem_tablicu(words);
-    std::map<prefix, std::vector<std::string>>::iterator it =
-      tablica.begin();
-    prefix res = it->first;
-    std::string suffix = gen.suffix_poick(res, tablica);
-    EXPECT_EQ(suffix, "day");
+    prefix p = gen.prefixi(tablica);
+    std::string suffix = gen.suffix_poick(p, tablica);
+    EXPECT_EQ(suffix, "a");
 }
 TEST(Test, Test_5) {
     generator gen;
     std::map<prefix, std::vector<std::string>> tablica = {
-        {{"today", "is"}, {"a"}},
+        {{"today", "is"}, {{"a"},{"good"}},
         {{"is", "a"}, {"good"}}
     };
     gen.MAXGEN = 4;
     std::string res = gen.itogovii_text(tablica);
-    EXPECT_EQ(res, "is a good a ");
+    EXPECT_EQ(res, "today is a good ");
 }
