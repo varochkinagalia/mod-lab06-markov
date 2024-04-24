@@ -51,7 +51,7 @@ TEST(Test, Test_5) {
     std::map<prefix, std::vector<std::string>> tablica = {
         {{"is", "a"}, {"good"}},
         {{"a", "good"}, {"day"}},
-        {{"today", "is"}, {"a", "good"}}
+        {{"today", "is"}, {"good", "a"}}
     };
     gen.MAXGEN = 4;
     std::string res = gen.itogovii_text(tablica);
