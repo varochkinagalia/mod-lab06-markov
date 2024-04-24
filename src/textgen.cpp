@@ -61,9 +61,9 @@ prefixi(std::map<prefix, std::vector<std::string>> statetab) {
     std::map<prefix, std::vector<std::string>>::iterator ita =
     statetab.begin();
     int delitel = statetab.size();
-    unsigned int k = 0;
-    srand(k);
-    int pos_start = rand_r(&k) % delitel;
+    //unsigned int k = 0;
+    //srand(k); rand_r(&k)
+    int pos_start = rand() % delitel;
     int count = 0;
     while (count != pos_start && ita != statetab.end()) {
         count++;
@@ -92,6 +92,8 @@ std::vector<std::string>> statetab) {
 }
 std::string generator::itogovii_text
 (std::map<prefix, std::vector<std::string>> statetab) {
+    unsigned int l = 1;
+    srand(l);
     std::string result = "";
     prefix pref = prefixi(statetab);
     int count = 0;
