@@ -55,7 +55,6 @@ sozdaem_tablicu(std::vector<std::string>words) {
     }
     return statetab;
 }
-//выбираем следующие после первого префиксы
 std::deque<std::string>generator::
 prefixi(std::map<prefix, std::vector<std::string>> statetab) {
     prefix pref;
@@ -94,14 +93,7 @@ std::vector<std::string>> statetab) {
 std::string generator::itogovii_text
 (std::map<prefix, std::vector<std::string>> statetab) {
     std::string result = "";
-    prefix pref;
-    std::map<prefix, std::vector<std::string>>::iterator i =
-    statetab.begin();
-    prefix p = i->first;
-    for (auto word : p) {
-        pref.push_back(word);
-    }
-    prefix prefix = pref;
+    prefix pref = prefixi(statetab);
     int count = 0;
     for (auto word : prefix) {
         result += word + ' ';
