@@ -49,7 +49,7 @@ TEST(Test, Test_4) {
 TEST(Test, Test_5) {
     generator gen;
     std::map<prefix, std::vector<std::string>> tablica = {
-        {{"today", "is"}, {{"a"},{"good"}},
+        {{"today", "is"}, {"a", "good"},
         {{"is", "a"}, {"good"}}
     };
     gen.MAXGEN = 4;
